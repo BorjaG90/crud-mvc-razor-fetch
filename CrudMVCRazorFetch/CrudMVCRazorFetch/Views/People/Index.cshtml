@@ -24,7 +24,27 @@
 
     //eliminar
     function jsDelete(Id) {
-        alert(Id)
+        fetch("@Url.Content("~/People/Delete")", {
+            method: "POST",
+            body: JSON.stringify({
+                Id: Id
+            }),
+            headers: {
+                'Accept': "application/json",
+                'Content-Type': "application/json"
+            }
+        }).then((res) => {
+            if (res.ok)
+                return res.text();
+            else
+                alert("Error al ejecutar :(");
+        }).then((data) => {
+            if (data != 1) {
+                alert(data);
+            } else {
+                Get();
+            }
+        })
     }
 
     Get();
