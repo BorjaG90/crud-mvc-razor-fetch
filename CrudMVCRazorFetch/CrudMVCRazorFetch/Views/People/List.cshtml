@@ -9,7 +9,7 @@
 <div>
     Nombre: @oPeople.Name<br />
     Edad: @oPeople.Age
-    <input type="button" value="Editar" />
-    <input type="button" value="Eliminar" />
+    <input type="button" value="Editar" onclick="document.location.href='@Url.Content("~/People/Edit/?Id="+oPeople.Id)'"/>
+    <input type="button" value="Eliminar" onclick="jsDelete(@oPeople.Id)" />
 </div>
 }
