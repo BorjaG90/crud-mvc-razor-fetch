@@ -6,8 +6,10 @@
 
 @foreach (var oPeople in Model)
 {
-    <div>
-        Nombre: @oPeople.Name<br />
-        Edad: @oPeople.Age
-    </div>
+<div>
+    Nombre: @oPeople.Name<br />
+    Edad: @oPeople.Age
+    <input type="button" value="Editar" />
+    <input type="button" value="Eliminar" />
+</div>
 }
